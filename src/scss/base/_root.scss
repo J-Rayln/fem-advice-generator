@@ -1,0 +1,15 @@
+@use "../abstracts/colors" as colors;
+
+:root {
+    @each $cat, $hues in colors.$colors {
+        @each $hue, $hsl in $hues {
+            --clr-#{$cat}-#{$hue}: #{$hsl};
+        }
+    }
+
+    --ff-primary: "Manrope", sans-serif;
+    --fw-400: 400;
+    --fw-800: 800;
+
+    --bg-color: var(--clr-neutral-300);
+}
